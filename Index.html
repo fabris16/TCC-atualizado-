@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luigia - Cucina Italiana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Overlay do Menu e do Modal -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Menu Lateral (Off-Canvas) -->
+    <nav id="sidebar" class="sidebar">
+        <button id="close-menu" class="close-btn">&times;</button>
+        <ul class="nav-links">
+            <li><a href="#" class="nav-item active" data-tab="home-tab">HOME</a></li>
+            <li><a href="#" class="nav-item" data-tab="cardapio-tab">CARDÁPIO</a></li>
+            <li><a href="#" class="nav-item" data-tab="contato-tab">CONTATO</a></li>
+        </ul>
+    </nav>
+
+    <!-- Modal de Detalhes da Pizza (Abre ao clicar na pizza) -->
+    <div id="pizza-modal" class="modal">
+        <button id="close-modal" class="close-modal-btn">&times;</button>
+        <div class="modal-content">
+            <img id="modal-img" src="" alt="Pizza" class="modal-pizza-img">
+            <h3 id="modal-title"></h3>
+            <p id="modal-desc"></p>
+            <span id="modal-price" class="modal-price"></span>
+        </div>
+    </div>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <h1>LUIGIA</h1>
+                <p>Cascavel e Foz do Iguaçu</p>
+            </div>
+            
+            <div class="header-controls">
+                <div class="language-select">Italiano</div>
+                <div id="open-menu" class="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ABA 1: HOME -->
+    <main id="home-tab" class="tab-content active">
+        <div class="hero-banner-container">
+            <picture>
+                <source media="(min-width: 768px)" srcset="imagens/Pizza-desktop.png">
+                <img src="imagens/Pizza.png" alt="Pizza Luigia" class="hero-banner-img">
+            </picture>
+        </div>
+
+        <section class="intro-section">
+            <div class="container">
+                <div class="italy-info-container">
+                    <div class="map-container">
+                        <img src="Imagens/Italia.png" alt="Italia">
+                    </div>
+                    <div class="text-container">
+                        <p class="intro-text">
+                            Proprio come voi, nutriamo una grande passione per la cucina italiana. 
+                            Da Luigia uniamo ingredienti selezionati, ricette che inspirano e ospitalità.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faixa Escura Expandida com Legendas Individuais -->
+        <section class="home-dark-banner">
+            <div class="container">
+                <div class="gallery-preview">
+                    <!-- Primeiro Card: Imagem + Comentário -->
+                    <div class="preview-card">
+                        <img src="imagens/Bebida.png" alt="Drinks Selecionados" class="preview-img">
+                        <p class="preview-caption">BEVANDE E COCKTAIL<br><span>Drinks exclusivos preparados para harmonizar com sua experiência.</span></p>
+                    </div>
+
+                    <!-- Segundo Card: Imagem + Comentário -->
+                    <div class="preview-card">
+                        <img src="imagens/Pizza2.png" alt="Pizza Forno a Lenha" class="preview-img">
+                        <p class="preview-caption">LA VERA PIZZA NAPOLETANA<br><span>Massa de fermentação natural assada em forno a lenha tradicional.</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ABA 2: CARDÁPIO -->
+    <section id="cardapio-tab" class="tab-content">
+        <div class="container">
+            <div class="category-header">
+                <h2>Pizza</h2>
+                <p>Le pizze sono di formato individuale e di fermentazione naturale.</p>
+            </div>
+
+            <div class="menu-list">
+                <div class="menu-card" data-title="Marinara" data-desc="Molho de tomate San Marzano, alho lâminado, orégano fresco e azeite de oliva extra virgem italiano." data-price="R$ 48,00" data-img="imagens/Pizza2.png">
+                    <img src="imagens/Pizza2.png" alt="Marinara" class="menu-card-img">
+                    <h3>Marinara</h3>
+                    <p>Molho de tomate, alho, orégano e azeite extravirgem.</p>
+                </div>
+
+                <div class="menu-card" data-title="Margherita" data-desc="Molho de tomate artesanal, muçarela de búfala, manjericão fresco e azeite extra virgem." data-price="R$ 54,00" data-img="imagens/Pizza.png">
+                    <img src="imagens/Pizza.png" alt="Margherita" class="menu-card-img">
+                    <h3>Margherita</h3>
+                    <p>Molho de tomate, muçarela de búfala e manjericão fresco.</p>
+                </div>
+
+                <div class="menu-card" data-title="Calabrese Speciale" data-desc="Calabresa artesanal fatiada, cebola roxa caramelizada, azeitonas pretas e orégano." data-price="R$ 58,00" data-img="imagens/Pizza2.png">
+                    <img src="imagens/Pizza2.png" alt="Calabrese Speciale" class="menu-card-img">
+                    <h3>Calabrese Speciale</h3>
+                    <p>Calabresa artesanal, cebola roxa e azeitonas pretas.</p>
+                </div>
+
+                <div class="menu-card" data-title="Linguica Calabrese" data-desc="Linguiça calabresa moída e salteada, pimenta leve, muçarela especial e salsa." data-price="R$ 56,00" data-img="imagens/Pizza.png">
+                    <img src="imagens/Pizza.png" alt="Linguica Calabrese" class="menu-card-img">
+                    <h3>Linguica Calabrese</h3>
+                    <p>Linguiça calabresa moída, toque de pimenta e muçarela.</p>
+                </div>
+
+                <div class="menu-card" data-title="Quattro Formaggi" data-desc="Associação nobre de muçarela, queijo gorgonzola, parmesão maturado e provolone defumado." data-price="R$ 62,00" data-img="imagens/Pizza2.png">
+                    <img src="imagens/Pizza2.png" alt="Quattro Formaggi" class="menu-card-img">
+                    <h3>Quattro Formaggi</h3>
+                    <p>Muçarela, gorgonzola, parmesão e provolone.</p>
+                </div>
+
+                <div class="menu-card" data-title="Cogumelos All'Aglio" data-desc="Cogumelos Paris e Shimeji frescos, salteados no alho orgânico e ervas finas da Itália." data-price="R$ 64,00" data-img="imagens/Pizza.png">
+                    <img src="imagens/Pizza.png" alt="Cogumelos All'Aglio" class="menu-card-img">
+                    <h3>Cogumelos All'Aglio</h3>
+                    <p>Cogumelos frescos salteados no alho e ervas finas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABA 3: CONTATO -->
+    <section id="contato-tab" class="tab-content">
+        <div class="container">
+            <h2 class="section-title-center">CONTATO</h2>
+            <div class="footer-grid">
+                <div class="branch-card">
+                    <img src="imagens/Bebida.png" alt="Unidade Cascavel" class="branch-img">
+                    <div class="branch-info">
+                        <h3>Cascavel</h3>
+                        <p>R. Vicente Machado, 1028 - CENTRO</p>
+                        <p>(45) 99933-8077</p>
+                        <p class="hours">Dal martedì alla domenica<br>18:00 - 23:00</p>
+                    </div>
+                </div>
+
+                <div class="branch-card">
+                    <img src="imagens/Pizza2.png" alt="Unidade Foz do Iguaçu" class="branch-img">
+                    <div class="branch-info">
+                        <h3>Foz do Iguaçu</h3>
+                        <p>Av. Paraná, 960 - CENTRO</p>
+                        <p>(45) 98422-3212</p>
+                        <p class="hours">Tutti i giorni<br>18:00 - 23:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
